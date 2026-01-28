@@ -1,0 +1,321 @@
+
+/* styles.css - B School Education Template */
+
+/* CSS Variables */
+:root {
+    /* Colors */
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --dark-color: #1a252f;
+    --light-color: #ecf0f1;
+    --white-color: #ffffff;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    
+    /* Typography */
+    --font-poppins: 'Poppins', sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-roboto);
+    color: var(--gray-800);
+    background-color: var(--gray-100);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-normal);
+}
+
+/* Top Header */
+.top-header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: var(--spacing-sm) 0;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .top-header {
+        display: block;
+    }
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    gap: var(--spacing-xl);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.875rem;
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.social-link {
+    color: var(--white-color);
+    font-size: 0.875rem;
+}
+
+.social-link:hover {
+    color: var(--secondary-color);
+}
+
+/* Main Navigation */
+.main-header {
+    background-color: var(--white-color);
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav {
+    padding: var(--spacing-md) 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-poppins);
+}
+
+.logo-highlight {
+    color: var(--secondary-color);
+}
+
+.logo-tagline {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .logo-tagline {
+        display: block;
+    }
+}
+
+.desktop-nav {
+    display: none;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+@media (min-width: 768px) {
+    .desktop-nav {
+        display: flex;
+    }
+}
+
+.nav-link {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+.cta-button {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--transition-normal);
+}
+
+.cta-button:hover {
+    background-color: #2980b9;
+}
+
+.mobile-menu-button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu-button {
+        display: none;
+    }
+}
+
+.mobile-menu {
+    display: none;
+    margin-top: var(--spacing-md);
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.mobile-nav-link {
+    color: var(--primary-color);
+    font-weight: 500;
+    padding: var(--spacing-sm) 0;
+    display: block;
+}
+
+.mobile-nav-link:hover {
+    color: var(--secondary-color);
+}
+
+.mobile-cta-button {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    padding: 0.75rem;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--transition-normal);
+    width: 100%;
+}
+
+.mobile-cta-button:hover {
+    background-color: #2980b9;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white-color);
+    padding: 4rem 0;
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        padding: 6rem 0;
+    }
+}
+
+.hero-content {
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: 4rem;
+    }
+}
+
+.hero-highlight {
+    color: var(--warning-color);
+}
+
+.hero-subtitle {
